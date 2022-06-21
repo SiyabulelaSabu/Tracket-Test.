@@ -19,9 +19,28 @@ h2 {
 }
 
 .balance-container #balance{
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 
 .cashflow-container {
     display: flex;
+    box-shadow: var(--box-shadow);
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+.income-container {
+    border-right: 1px solid #cccccc;
+    padding-right: 20px;
+}
+
+.expense-container {
+    padding-left: 20px;
+}
+
+.income {
+    font-size: 1.3em;
 }
