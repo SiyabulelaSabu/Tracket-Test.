@@ -1,5 +1,7 @@
 :root {
-    --drop-shadow: 0px 1px 4px
+    --box-shadow: 0px 1px 4px 1px rgba(199,199,199,1);
+    --income: green;
+    --expense: red;
 }
 
 body {
@@ -43,4 +45,12 @@ h2 {
 
 .income {
     font-size: 1.3em;
+}
+
+#income {
+    color: var(--income);
+}
+
+#expense {
+    color: var(--expense);
 }
