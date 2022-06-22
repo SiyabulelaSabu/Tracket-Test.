@@ -54,3 +54,68 @@ h2 {
 #expense {
     color: var(--expense);
 }
+
+#transaction {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#transaction li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-shadow: var(--box-shadow );
+}
+
+#transaction li span {
+    display: inline-block;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+#transaction li .income-amt {
+    background-color: var(--income);
+}
+
+#transaction li .expense-amt {
+    background-color: var(--expense);
+}
+
+#transaction li button {
+    padding: 5px 10px 5px 10px;
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container form label {
+    padding-bottom:10px ;
+}
+
+.form-container form label {
+    height: 25px;
+    margin-bottom: 10px;
+}
+
+.form-container form button {
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: white;
+}
+
+#incomeBtn {
+    background-color: var(--income);
+}
+
+#expenseBtn {
+    background-color: var(--expense);
+}
