@@ -81,6 +81,7 @@ h2 {
     color: white;
     padding: 5px;
     border-radius: 3px;
+    margin-right: 5px;
 }
 
 #transaction li .income-amt {
