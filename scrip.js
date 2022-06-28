@@ -12,18 +12,30 @@ var state = {
 var balanceEl = document.querySelector('#balance');
 var incomeEl = document.querySelector('#income');
 var expenseEl = document.querySelector('#expense');
-var transaction = document.querySelector('#transaction')
+var transaction = document.querySelector('#transaction');
+var incomeBtnEl = document.querySelector('#incomeBtn');
+var expenseBtnEl = document.querySelector('#expenseBtn');
 
 function init () {
     updateState();
+    initListeners();
     render();
+}
+
+function initListeners() {
+    incomeBtnEl.addEventListener('click', onAddIncomeClick);
+    expenseBtnEl.addEventListener('click', onAddExpenseClick);
+}
+
+function onAddIncomeClick() {
+    
 }
 
 function updateState() {
     var balance = 0;
         income = 0;
         expense = 0;
-        item = 0;
+        item;
 
     for (var i = 0; i < state.transaction.length; i++) {
         item = state.transaction[i];
@@ -36,6 +48,10 @@ function updateState() {
     }
 
     balance = income - expense;
+
+    state.balance = balance;
+    state.income = income;
+    state.expense = expense;
 }
 
 function render() {
