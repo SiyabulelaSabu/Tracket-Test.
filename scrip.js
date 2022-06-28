@@ -2,7 +2,7 @@ var state = {
     balance: 100,
     income: 400,
     expense: 100,
-    transcation: [
+    transaction: [
         { name: 'salary', amount: 5000, type: 'income'},
         { name: 'Buy Grocery', amount: 50, type: 'expense'},
         { name: 'Buy Guitar', amount:500, type: 'expense'}
@@ -12,7 +12,7 @@ var state = {
 var balanceEl = document.querySelector('#balance');
 var incomeEl = document.querySelector('#income');
 var expenseEl = document.querySelector('#expense');
-var transcation = document.querySelector('#transcation')
+var transaction = document.querySelector('#transaction')
 
 function init () {
     updateState();
@@ -23,15 +23,19 @@ function updateState() {
     var balance = 0;
         income = 0;
         expense = 0;
-        item;
+        item = 0;
 
-    for (var i = 0; i < state.transcation.length; i++) {
-        item = state.transcation[i];
+    for (var i = 0; i < state.transaction.length; i++) {
+        item = state.transaction[i];
 
         if (item.type === 'income') {
-            
+            income += item.amount;
+        }   else if (item.type === 'expense') {
+            expense += item.amount;
         }
     }
+
+    balance = income - expense;
 }
 
 function render() {
@@ -39,13 +43,13 @@ function render() {
     incomeEl.innerHTML = `R${state.income}`;
     expenseEl.innerHTML = `R${state.expense}`;
 
-    var transcation, containerEl, amountEl, item, btnEl;
+    var transaction, containerEl, amountEl, item, btnEl;
 
-    for (var i = 0; i < state.transcation.length; i++) {
-        transcationEl = document.createElement('li');
-        transcationEl.append(state.transcation[i].name);
+    for (var i = 0; i < state.transaction.length; i++) {
+        transactionEl = document.createElement('li');
+        transactionEl.append(state.transaction[i].name);
 
-        transcation.appendChild(transcation);
+        transaction.appendChild(transaction);
 
         containerEl = document.createElement('div')
         amountEl = document.createElement('span')
@@ -63,7 +67,7 @@ function render() {
 
         containerEl.appendChild(btnEl);
 
-        transcation.appendChild(containerEl);
+        transaction.appendChild(containerEl);
     }
 }
 
