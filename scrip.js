@@ -23,9 +23,14 @@ function updateState() {
     var balance = 0;
         income = 0;
         expense = 0;
+        item;
 
     for (var i = 0; i < state.transcation.length; i++) {
-        
+        item = state.transcation[i];
+
+        if (item.type === 'income') {
+            
+        }
     }
 }
 
