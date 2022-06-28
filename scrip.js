@@ -11,11 +11,22 @@ var state = {
 
 var balanceEl = document.querySelector('#balance');
 var incomeEl = document.querySelector('#income');
-var expsenEl = document.querySelector('#expense');
+var expenseEl = document.querySelector('#expense');
 var transcation = document.querySelector('#transcation')
 
 function init () {
-    
+    updateState();
+    render();
+}
+
+function updateState() {
+    var balance = 0;
+        income = 0;
+        expense = 0;
+
+    for (var i = 0; i < state.transcation.length; i++) {
+        
+    }
 }
 
 function render() {
