@@ -21,7 +21,6 @@ var amountInputEl = document.querySelector('amount');
 function init () {
     updateState();
     initListeners();
-    render();
 }
 
 function initListeners() {
@@ -64,6 +63,8 @@ function updateState() {
     state.balance = balance;
     state.income = income;
     state.expense = expense;
+
+    render();
 }
 
 function render() {
