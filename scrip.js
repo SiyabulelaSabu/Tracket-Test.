@@ -30,7 +30,13 @@ function initListeners() {
 }
 
 function onAddIncomeClick() {
-    console.log('income', nameInputEl.Value, amountInputEl.value);
+    var transaction = {
+        name: nameInputEl.Value, 
+        amount: parseInt(amountInputEl.Value), type: 'income'
+    };
+
+    state.transaction.push(transaction);
+    updateState();
 }
 
 function onAddExpenseClick() {
