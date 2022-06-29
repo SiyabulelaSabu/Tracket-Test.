@@ -15,6 +15,8 @@ var expenseEl = document.querySelector('#expense');
 var transaction = document.querySelector('#transaction');
 var incomeBtnEl = document.querySelector('#incomeBtn');
 var expenseBtnEl = document.querySelector('#expenseBtn');
+var nameInputEl = document.querySelector('#name');
+var amountInputEl = document.querySelector('amount');
 
 function init () {
     updateState();
@@ -28,7 +30,11 @@ function initListeners() {
 }
 
 function onAddIncomeClick() {
-    
+    console.log('income', nameInputEl.Value, amountInputEl.value);
+}
+
+function onAddExpenseClick() {
+    console.log('expense')
 }
 
 function updateState() {
