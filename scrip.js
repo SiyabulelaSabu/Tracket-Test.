@@ -29,13 +29,19 @@ function initListeners() {
 }
 
 function onAddIncomeClick() {
-    var transaction = {
-        name: nameInputEl.Value, 
-        amount: parseInt(amountInputEl.Value), type: 'income'
-    };
+    var name = nameInputEl.Value;
+    var amount = amountInputEl.Value;
+    for (name !== '' && amount !== '') {
+        var transaction = {
+            name: nameInputEl.Value, 
+            amount: parseInt(amountInputEl.Value), type: 'income'
+        };
 
-    state.transaction.push(transaction);
-    updateState();
+        state.transaction.push(transaction);
+       
+        updateState();
+    }
+
 }
 
 function onAddExpenseClick() {
@@ -43,9 +49,9 @@ function onAddExpenseClick() {
 }
 
 function updateState() {
-    var balance = 0;
-        income = 0;
-        expense = 0;
+    var balance = 0,
+        income = 0,
+        expense = 0,
         item;
 
     for (var i = 0; i < state.transaction.length; i++) {
@@ -73,6 +79,8 @@ function render() {
     expenseEl.innerHTML = `R${state.expense}`;
 
     var transaction, containerEl, amountEl, item, btnEl;
+
+    transactionEl.innerHTML = '';
 
     for (var i = 0; i < state.transaction.length; i++) {
         transactionEl = document.createElement('li');
