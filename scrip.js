@@ -40,8 +40,12 @@ function onAddIncomeClick() {
         state.transaction.push(transaction);
        
         updateState();
+    } else {
+        alert ('Please enter valid data');
     }
 
+
+    
 }
 
 function onAddExpenseClick() {
